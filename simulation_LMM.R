@@ -18,7 +18,7 @@ methylation_data %>%
 
 sample_data <- data.frame(
   Sample_ID = paste0("Sample_", 1:num_samples),
-  expo = rnorm(num_samples, mean = 50, sd = 10),
+  expo = rnorm(num_samples, mean = 50, sd = 10)
 )
 
 # Initialize the EWAS module----
