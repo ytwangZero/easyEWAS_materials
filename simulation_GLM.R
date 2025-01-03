@@ -39,5 +39,3 @@ res <- startEWAS(input = res,
                  random = "batch",       
                  core = 10           
 )                                     
-#  sec elapsed
-head(res$result)
