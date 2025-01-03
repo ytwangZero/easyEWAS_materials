@@ -43,5 +43,3 @@ res <- startEWAS(input = res,
                  status = "Status",     
                  core = 10           
 )                                     
-# 263.47 sec elapsed.
-head(res$result)
