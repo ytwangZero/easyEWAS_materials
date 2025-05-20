@@ -17,4 +17,7 @@ This repository contains materials related to the **easyEWAS** R package. Below 
    This script generates simulated data to test the performance of the General linear model (`GLM`). 
 
 5. **simulation_LMM.R**  
-   This script generates simulated data to test the performance of the Linear Mixed-Effects Model (`LMM`). 
+   This script generates simulated data to test the performance of the Linear Mixed-Effects Model (`LMM`).
+
+6. **Install_easyEWAS.R**  
+   This script will automatically check your R version, configure the appropriate Bioconductor version, and install all necessary packages (including those from CRAN and Bioconductor) required to use easyEWAS.
