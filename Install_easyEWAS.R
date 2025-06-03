@@ -31,7 +31,7 @@ if (getRversion() >= "4.4.0") {
   message("\n================ Installing dependencies for easyEWAS ====================\n")
   
   cran_pkgs <- c("dichromat","remotes")
-  for (pkg in bioc_pkgs) {
+  for (pkg in cran_pkgs) {
     safe_install(install_if_missing(pkg, use_bioc = FALSE))
   }
   
