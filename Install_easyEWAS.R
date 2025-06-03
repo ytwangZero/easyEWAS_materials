@@ -1,5 +1,9 @@
 if (getRversion() >= "4.4.0") {
   
+  
+  message("R version check passed: ", getRversion(), ".\n")
+  suppressMessages(library(utils))
+  
   install_if_missing <- function(pkg, use_bioc = FALSE) {
     if (!pkg %in% rownames(installed.packages())) {
       if (use_bioc) {
@@ -16,15 +20,22 @@ if (getRversion() >= "4.4.0") {
   }
   
   ## Step 1: Install BiocManager if needed
+  message("Checking for BiocManager...")
   if (!requireNamespace("BiocManager", quietly = TRUE)) {
-    message("Installing BiocManager...")
+    message("BiocManager not found. Installing BiocManager...")
     install.packages("BiocManager")
+  } else {
+    message("BiocManager is already installed!\n")
   }
   
   ## Step 2: Ensure correct Bioconductor version
-  if (package_version(as.character(BiocManager::version())) < package_version("3.20")) {
+  current_bioc_ver <- as.character(BiocManager::version())
+  message("Check for current Bioconductor version: ", current_bioc_ver)
+  if (package_version(current_bioc_ver) < package_version("3.20")) {
     message("Bioconductor 3.20 is required. Updating Bioconductor...")
     BiocManager::install(version = "3.20")
+  } else {
+    message("Bioconductor version is sufficient!")
   }
   
   ## Step 3: Install all dependencies BEFORE installing easyEWAS
