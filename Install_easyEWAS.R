@@ -62,7 +62,7 @@ if (getRversion() >= "4.4.0") {
   ## Step 4: Install easyEWAS
   message("Installing easyEWAS from GitHub...")
   tryCatch({
-    remotes::install_github("ytwangzero/easyEWAS", force = TRUE)
+    remotes::install_github("ytwangZero/easyEWAS", force = TRUE)
     message("\n🎉✨ easyEWAS installation completed successfully! ✨🎉")
   }, error = function(e) {
     message("\n❌ easyEWAS installation failed: ", conditionMessage(e))
