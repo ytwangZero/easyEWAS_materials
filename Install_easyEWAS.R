@@ -29,8 +29,9 @@ if (getRversion() >= "4.4.0") {
   }
   
   ## Step 2: Ensure correct Bioconductor version
+  options(BIOCONDUCTOR_ONLINE_VERSION_DIAGNOSIS=TRUE)
   current_bioc_ver <- as.character(BiocManager::version())
-  message("Checking for current Bioconductor version: ", current_bioc_ver)
+  message("Check for current Bioconductor version: ", current_bioc_ver)
   if (package_version(current_bioc_ver) < package_version("3.20")) {
     message("Bioconductor 3.20 is required. Updating Bioconductor...")
     BiocManager::install(version = "3.20")
@@ -64,10 +65,13 @@ if (getRversion() >= "4.4.0") {
   options(timeout = 600000000)
   tryCatch({
     remotes::install_github("ytwangZero/easyEWAS", force = TRUE)
-    message("\n easyEWAS installation completed successfully!")
   }, error = function(e) {
     message("\n easyEWAS installation failed: ", conditionMessage(e))
   })
+  
+  if ("easyEWAS" %in% rownames(installed.packages())) {
+    message("\neasyEWAS installation completed successfully!")
+  }
   
 } else {
   stop("Your R version is ", getRversion(), 
