@@ -61,6 +61,7 @@ if (getRversion() >= "4.4.0") {
   
   ## Step 4: Install easyEWAS
   message("Installing easyEWAS from GitHub...")
+  options(timeout = 600000000)
   tryCatch({
     remotes::install_github("ytwangZero/easyEWAS", force = TRUE)
     message("\n easyEWAS installation completed successfully!")
