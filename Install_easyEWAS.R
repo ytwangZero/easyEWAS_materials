@@ -41,6 +41,8 @@ if (getRversion() >= "4.4.0") {
   
   ## Step 3: Install all dependencies BEFORE installing easyEWAS
   message("\n================ Installing dependencies for easyEWAS ====================\n")
+
+   options(timeout = 600000000)
   
   cran_pkgs <- c("dichromat","remotes")
   for (pkg in cran_pkgs) {
