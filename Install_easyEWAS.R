@@ -34,7 +34,7 @@ if (getRversion() >= "4.4.0") {
   message("Check for current Bioconductor version: ", current_bioc_ver)
   if (package_version(current_bioc_ver) < package_version("3.20")) {
     message("Bioconductor 3.20 is required. Updating Bioconductor...")
-    BiocManager::install(version = "3.20")
+    BiocManager::install(version = "3.20", force = TRUE)
   } else {
     message("Bioconductor version is sufficient!")
   }
