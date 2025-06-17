@@ -7,7 +7,7 @@ if (getRversion() >= "4.4.0") {
   install_if_missing <- function(pkg, use_bioc = FALSE) {
     if (!pkg %in% rownames(installed.packages())) {
       if (use_bioc) {
-        BiocManager::install(pkg, ask = FALSE, update = FALSE)
+        BiocManager::install(pkg, ask = FALSE, force = TRUE, update = FALSE)
       } else {
         install.packages(pkg)
       }
